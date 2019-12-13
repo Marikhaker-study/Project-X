@@ -1,0 +1,5 @@
+﻿  main.cpp
+d:\школа\маркіян\сраний палітєх\проект нейронка\project x\project x\imgui-master\examples\example_win32_directx9\main.cpp(78): warning C4189: show_demo_window: локальная переменная инициализирована, но не использована
+d:\школа\маркіян\сраний палітєх\проект нейронка\project x\project x\imgui-master\examples\example_win32_directx9\main.cpp(79): warning C4189: show_another_window: локальная переменная инициализирована, но не использована
+  example_win32_directx9.vcxproj -> D:\Школа\Маркіян\Сраний палітєх\Проект нейронка\Project X\Project X\imgui-master\examples\example_win32_directx9\Debug\example_win32_directx9.exe
+  example_win32_directx9.vcxproj -> D:\Школа\Маркіян\Сраний палітєх\Проект нейронка\Project X\Project X\imgui-master\examples\example_win32_directx9\Debug\example_win32_directx9.pdb (Partial PDB)
