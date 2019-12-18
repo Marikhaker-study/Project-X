@@ -1,3 +1,14 @@
 ﻿  Network.cpp
-d:\школа\маркіян\сраний палітєх\проект нейронка\network\network\matrix.h(324): error C3078: размер массива должен быть указан в новых выражениях
-d:\школа\маркіян\сраний палітєх\проект нейронка\network\network\network.cpp(43): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+d:\школа\маркіян\сраний палітєх\проект нейронка\network\network\matrix.h(79): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note:  см. объявление "fopen"
+d:\школа\маркіян\сраний палітєх\проект нейронка\network\network\matrix.h(90): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1193): note:  см. объявление "fscanf"
+d:\школа\маркіян\сраний палітєх\проект нейронка\network\network\matrix.h(91): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1193): note:  см. объявление "fscanf"
+d:\школа\маркіян\сраний палітєх\проект нейронка\network\network\matrix.h(98): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1193): note:  см. объявление "fscanf"
+d:\школа\маркіян\сраний палітєх\проект нейронка\network\network\matrix.h(123): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note:  см. объявление "fopen"
+d:\школа\маркіян\сраний палітєх\проект нейронка\network\network\network.cpp(262): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Network.vcxproj -> D:\Школа\Маркіян\Сраний палітєх\Проект нейронка\Network\Debug\Network.exe
+  Network.vcxproj -> D:\Школа\Маркіян\Сраний палітєх\Проект нейронка\Network\Debug\Network.pdb (Partial PDB)

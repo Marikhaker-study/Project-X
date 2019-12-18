@@ -1,5 +1,7 @@
+//This library is some cyberforum user's work
 #include <iostream>
 #include <math.h>
+#include <vector>
 using namespace std;
 
 class matrix {
@@ -16,6 +18,7 @@ public:
 	friend matrix operator* (matrix const &A, matrix const &B);
 	friend matrix operator* (double k, matrix const &A);
 	friend matrix operator* (matrix const &A, double k);
+	// 1 - width, 2 - height
 	void set(int w, int h, double* val) {
 		width = w;
 		height = h;
@@ -25,8 +28,9 @@ public:
 			values[i] = val[i];
 		}
 	}
+	// i = height, j = width
 	double get_val(int i, int j) {
-		return values[(j - 1)*width + (i - 1)];
+		return values[(i)*width + (j)];
 	}
 	matrix get_column(int i) {
 		i--;
@@ -54,6 +58,93 @@ public:
 
 		return answer;
 	}
+
+	//Added for easy printing
+	void print_matrix() 
+	{
+		for (int i = 0; i < height; ++i)
+		{
+			for (int j = 0; j < width; ++j)
+			{
+				cout << get_val(i, j) << " \t";
+			};
+			cout << endl;
+		}
+	}
+
+	void file_read_matrix(char *filename)
+	{
+		FILE *f;
+
+		if ((f = fopen(filename, "rt")) == NULL)
+		{
+			perror("Some bad things about file< error has been cast: ");
+			exit(1);
+		}
+
+		//fseek(f, position, SEEK_SET);
+
+		int t_height = 0;
+		int t_width = 0;
+
+		fscanf(f, "%d", &t_height);
+		fscanf(f, "%d", &t_width);
+		double *temp = new double[t_height*t_width];
+
+		for (int i = 0; i < t_height; ++i)
+		{
+			for (int j = 0; j < t_width; ++j)
+			{
+				fscanf(f, "%lf", &temp[i*t_width+j]);
+				
+			}
+		}
+		/*fread(temp, sizeof(double), t_height*t_width, f);*/
+		set(t_width, t_height, temp);
+
+		delete[] temp;
+
+		if (ferror(f)) {
+			printf("File Error\n");
+			exit(2);
+		}
+
+		//position = ftell(f);
+
+		fclose(f);
+
+		//return position;
+	}
+
+	void file_write_matrix(char *filename)
+	{
+		FILE *f;
+
+		if ((f = fopen(filename, "wt")) == NULL)
+		{
+			perror("Some bad things about file< error has been cast: ");
+			exit(1);
+		}
+
+		fprintf(f, "%d\n", height);
+		fprintf(f, "%d\n", width);
+
+		for (int i = 0; i < height; ++i)
+		{
+			for (int j = 0; j < width; ++j)
+			{
+				fprintf(f, "%f\n", get_val(i, j));
+			};
+		}
+
+		if (ferror(f)) {
+			printf("File Error\n");
+			exit(2);
+		}
+		
+		fclose(f);
+	}
+
 	matrix minor(int i, int j) {
 		matrix answer;
 
@@ -108,7 +199,8 @@ public:
 		}
 		else {
 			for (int i = 0; i < width; i++) {
-				answer += pow(-1, i)*get_val(i + 1, 1)*minor(i + 1, 1).det();
+				answer += pow(-1, i)*get_val(1, i)*minor(i + 1, 1).det();
+				// Was: answer += pow(-1, i)*get_val(i, 1)*minor(i + 1, 1).det();
 			}
 		}
 		return answer;
@@ -319,9 +411,19 @@ public:
 
 		return answer;
 	}
+
+	int get_width()
+	{
+		return width;
+	}
+
+	int get_height()
+	{
+		return height;
+	}
 private:
 	int width, height;
-	double* values = new double[];
+	double* values = new double[400]; // only 20*20 matrix max
 };
 
 istream& operator>> (istream& in, matrix& matrix) {
